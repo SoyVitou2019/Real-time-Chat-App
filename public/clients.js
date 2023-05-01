@@ -25,6 +25,11 @@ textarea.addEventListener('keyup', (e) => {
     }
 })
 
+function sendtoserver(){
+    let text = document.querySelector('.text');
+    sendMessage(text.value)
+}
+
 function sendMessage(message) {
     let msg = {
         user: names,

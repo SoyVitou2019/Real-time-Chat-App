@@ -47,7 +47,13 @@ textarea {
     outline: none;
     background: #FBFBFB;
 }
-
+.container{
+    display: flex;
+}
+.container .send{
+    padding-left: 40px;
+    padding-right: 40px;
+}
 .message {
     padding: 20px; 
     border-radius: 4px; 
