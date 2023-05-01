@@ -1,10 +1,23 @@
 const socket = io()
-let name;
+let names;
+let room;
 let textarea = document.querySelector('#textarea')
 let messageArea = document.querySelector('.message__area')
-do {
-    name = prompt('Please enter your name: ')
-} while(!name)
+
+// let inputTag = document.getElementById("code_input");
+// let inputValue = inputTag.value;
+
+// let nameTag = document.getElementById("name_input");
+// let nameValue = nameTag.value;
+do{
+    names = prompt("Name : ");
+}while(!names)
+do{
+    room = prompt("Room : ");
+}while(!room)
+
+// names = nameValue;
+// room = inputValue;
 
 textarea.addEventListener('keyup', (e) => {
     if(e.key === 'Enter') {
@@ -14,7 +27,7 @@ textarea.addEventListener('keyup', (e) => {
 
 function sendMessage(message) {
     let msg = {
-        user: name,
+        user: names,
         message: message.trim()
     }
     // Append 
@@ -23,7 +36,10 @@ function sendMessage(message) {
     scrollToBottom()
 
     // Send to server 
-    socket.emit('message', msg)
+    socket.emit('message', {
+        lobby:room,
+        messag: msg
+    })
 
 }
 
@@ -40,15 +56,16 @@ function appendMessage(msg, type) {
     messageArea.appendChild(mainDiv)
 }
 
+
 // Recieve messages 
 socket.on('message', (msg) => {
-    appendMessage(msg, 'incoming')
-    scrollToBottom()
+    if(msg.lobby == room){
+        appendMessage(msg.messag, 'incoming')
+        scrollToBottom()
+    }
 })
-// Recieve messages 
-socket.on('sss', (msg) => {
-    console.log(msg)
-})
+
+
 
 
 
@@ -56,4 +73,4 @@ function scrollToBottom() {
     messageArea.scrollTop = messageArea.scrollHeight
 }
 
-
+// exports.default = room;

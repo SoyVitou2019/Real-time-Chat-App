@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        height: 100vh;
+        background-color: rgb(35, 50, 50);
+    }
+
+    .all-container {
+        width: 90vw;
+        height: 100vh;
+        display: flex;
+        margin: auto;
+        align-content: center;
+    }
+
+
+    .text {
+        text-align: justify;
+        margin: auto;
+    }
+
+    form {
+        width: 400px;
+        height: 300px;
+        background-color: rgba(1, 187, 255, 0.521);
+        border: 1px white solid;
+        border-radius: 8px;
+        margin: auto;
+        padding: 3px 10px;
+        text-align: center;
+        color: white;
+        display: grid;
+        align-items: center;
+    }
+
+    form:hover {
+        width: 400px;
+        height: 300px;
+        background-color: rgba(1, 187, 255, 0.458);
+        border: 1px white solid;
+        border-radius: 8px;
+        margin: auto;
+        padding: 3px 10px;
+        text-align: center;
+        color: white;
+        display: grid;
+        align-items: center;
+    }
+
+    .btn {
+        height: 40px;
+        width: 200px;
+        border-radius: 50px;
+        transition: .5s;
+        margin: auto;
+        margin-top: 70px;
+    }
+
+    .btn1 {
+        height: 40px;
+        width: 200px;
+        border-radius: 50px;
+        transition: .5s;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    .btn1:hover {
+        height: 40px;
+        width: 200px;
+        border-radius: 50px;
+        transition: .5s;
+        margin: auto;
+        margin-top: 10px;
+        background-color: rgba(78, 220, 220, 0.395);
+    }
+
+    .output {
+        height: 40px;
+        width: 200px;
+        border-radius: 50px;
+        transition: .5s;
+        background-color: rgb(117, 117, 117);
+        border: 1px solid white;
+        margin: auto;
+        margin-top: 10px;
+        font-size: 25px;
+    }
+
+    .btn:hover {
+        cursor: pointer;
+        border-radius: 10px;
+        color: rgba(51, 29, 1, 0.748);
+    }
+
+    #code_input {
+        width: 200px;
+        text-align: center;
+        height: 30px;
+        border: 2px solid rgb(255, 208, 0);
+        border-radius: 50px;
+        margin: auto;
+        margin-top: 50px;
+    }
+    #name_input {
+        width: 200px;
+        text-align: center;
+        height: 30px;
+        border: 2px solid rgb(255, 208, 0);
+        border-radius: 50px;
+        margin: auto;
+        margin-top: 7px;
+    }
+
+    .ins {
+        color: white;
+        text-align: center;
+        font-size: 3em;
+        margin-top: 90px;
+        margin-bottom: -80px;
+        padding-bottom: 0%;
+    }
+
+    @media screen and (max-width:900px) {
+        .all-container {
+            display: grid;
+            gap: 50px;
+        }
+    }
+</style>
+
+<body>
+    <p class="ins">Let's Talk Together!</p>
+    <div class="all-container">
+        <!-- <div class="container">
+            <p class="text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet illo voluptates atque minus eum,
+                excepturi sequi laudantium labore aut error quod voluptatem vel rerum optio ullam maxime placeat
+                officiis ipsa.
+            </p>
+            <button class="btn">Create Room</button>
+            <div class="output">. . . . . . .</div>
+        </div> -->
+        <form method="post">
+            <p class="text">Real time chat, also known as online chat or internet chat, is a way of communication and
+                interaction in real time on the Internet. This communication is based on text messages. Two or more
+                people can communicate and also send pictures, videos or audio files.</p>
+            <input type="text" id="code_input" placeholder="Enter your code room ..." name="name">
+            <input type="text" id="name_input" placeholder="Enter your Name" name="name">
+            <button class="btn1" onclick="changeToIndex()">Join</button>
+        </form>
+    </div>
+    <script src="./server.js"></script>
+</body>
+
+</html>
